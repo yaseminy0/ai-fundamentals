@@ -87,3 +87,35 @@ The pathfinding project builds on an instructor-provided framework. The map-colo
 ## Limitations
 
 These are small educational implementations. Results depend on the example environments and algorithm settings. The genetic algorithm does not guarantee finding a solution within the generation limit, and the pathfinding geometry checks have not been fully validated for arbitrary polygon configurations.
+### 5. CSP Map Coloring — Algorithm Comparison
+
+A Python comparison of four approaches to solving a 10-state map-coloring problem:
+
+- Backtracking
+- Backtracking with Forward Checking
+- Backtracking with AC-3 constraint propagation
+- Min-Conflicts
+
+Each state is a variable with four possible colors. Neighboring states must have different colors.
+
+#### Evaluation
+
+Each method is evaluated over 100 runs under two initial conditions:
+- No fixed colors.
+- North Carolina fixed to Red.
+
+The program reports average runtime in milliseconds, the number of valid solutions, and an example coloring. Solution validation checks all neighbor constraints and preserves the initial assignment.
+
+In a verification run, all four methods found valid solutions in 100/100 runs under both conditions. Runtime depends on the machine, and results on this small map do not establish which method performs best on larger problems.
+
+Min-Conflicts uses random initialization and tie-breaking, with a maximum of 10,000 repair steps. A solution is not guaranteed within that limit.
+
+#### Requirements
+
+Python 3. No external packages or data files are required.
+
+#### Run
+
+From the repository root:
+
+    python csp-map-coloring/map_coloring_csp.py
