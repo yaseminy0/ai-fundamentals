@@ -118,4 +118,4 @@ Python 3. No external packages or data files are required.
 
 From the repository root:
 
-    python csp-map-coloring/map_coloring_csp.py
+    python CSP_map_coloring/map_coloring_csp.py
